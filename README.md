@@ -37,11 +37,13 @@ acentos dourado-latão e botões verdes do WhatsApp. Painéis em vidro fosco (ba
 - Fontes via `<link>` no `__root.tsx`
 - SEO (title, description, og) por página
 
-## Rodar
+## Deploy (Netlify, grátis)
 
-```bash
-npm install
-npm run dev -- --port 3000
-npm run build
-npm run preview -- --port 3127
-```
+O projeto usa `@netlify/vite-plugin-tanstack-start` — o build já sai pronto
+para a Netlify. Para publicar:
+
+1. Crie conta em netlify.com
+2. Add new site → Import an existing project → GitHub → escolha este repo
+3. Build settings são detectadas automaticamente (`npm run build`)
+4. Deploy — você ganha uma URL `*.netlify.app` (dá para trocar o nome e/ou
+   apontar domínio próprio depois)
