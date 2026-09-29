@@ -47,3 +47,12 @@ para a Netlify. Para publicar:
 3. Build settings são detectadas automaticamente (`npm run build`)
 4. Deploy — você ganha uma URL `*.netlify.app` (dá para trocar o nome e/ou
    apontar domínio próprio depois)
+
+## Rodar local
+
+```bash
+npm install
+npm run dev -- --port 3000
+npm run build
+npm run preview -- --port 3127
+```
