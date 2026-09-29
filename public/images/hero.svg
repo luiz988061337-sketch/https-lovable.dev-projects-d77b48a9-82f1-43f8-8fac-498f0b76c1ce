@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+<radialGradient id="g" cx="30%" cy="20%" r="80%">
+<stop offset="0%" stop-color="#c9a24b" stop-opacity="0.9"/>
+<stop offset="35%" stop-color="#5a4520" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="#14110d"/>
+</radialGradient>
+<linearGradient id="chair" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#3a2d18"/>
+<stop offset="100%" stop-color="#14110d"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#g)"/>
+<rect width="800" height="600" fill="#14110d" opacity="0.35"/>
+<!-- barber chair silhouette -->
+<g fill="url(#chair)" stroke="#c9a24b" stroke-width="3" opacity="0.95">
+<rect x="280" y="180" width="240" height="200" rx="24"/>
+<rect x="250" y="380" width="300" height="40" rx="12"/>
+<rect x="370" y="420" width="60" height="120" rx="12"/>
+<ellipse cx="400" cy="550" rx="160" ry="18" fill="none" stroke-opacity="0.6"/>
+</g>
+<circle cx="400" cy="280" r="70" fill="none" stroke="#c9a24b" stroke-width="4" opacity="0.8"/>
+<text x="400" y="295" text-anchor="middle" font-family="Arial Black" font-size="52" fill="#c9a24b">L</text>
+<text x="400" y="150" text-anchor="middle" font-family="Arial" font-size="28" letter-spacing="8" fill="#f5efe3">L MARTINS</text>
+<text x="400" y="580" text-anchor="middle" font-family="monospace" font-size="18" fill="#c9a24b" opacity="0.8">luz quente • tons escuros • navalha</text>
+</svg>

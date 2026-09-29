@@ -1,0 +1,17 @@
+{
+  "projectName": "https-lovabledev-projects-d77b48a9-82f1-43f8-8fac-498f0b76c1ce",
+  "mode": "file-router",
+  "typescript": true,
+  "tailwind": true,
+  "packageManager": "npm",
+  "git": false,
+  "install": true,
+  "intent": true,
+  "addOnOptions": {},
+  "projectPreset": "default",
+  "includeExamples": false,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react",
+  "chosenAddOns": []
+}
