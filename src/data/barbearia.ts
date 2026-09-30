@@ -51,10 +51,10 @@ export type Product = {
 }
 
 export const PRODUCTS: Product[] = [
-  { id: 'pomada-fosca', nome: 'Pomada Fosca', desc: 'Efeito seco, alta fixação 80g', preco: 45, tag: 'Cabelo', img: '/images/produto-pomada.svg' },
-  { id: 'oleo-barba', nome: 'Óleo de Barba', desc: 'Cedro + alecrim, 30ml', preco: 39, tag: 'Barba', img: '/images/produto-oleo.svg' },
-  { id: 'creme-pos', nome: 'Creme Pós-Barba', desc: 'Alivia irritação, menta fresca', preco: 35, tag: 'Barba', img: '/images/produto-creme.svg' },
-  { id: 'kit-lmartins', nome: 'Kit L MARTINS', desc: 'Pomada + óleo + pente de madeira', preco: 99, tag: 'Kits presente', img: '/images/produto-kit.svg' },
+  { id: 'pomada-fosca', nome: 'Pomada Fosca', desc: 'Efeito seco, alta fixação 80g', preco: 45, tag: 'Cabelo', img: '/images/produto-pomada.jpg' },
+  { id: 'oleo-barba', nome: 'Óleo de Barba', desc: 'Cedro + alecrim, 30ml', preco: 39, tag: 'Barba', img: '/images/produto-oleo.jpg' },
+  { id: 'creme-pos', nome: 'Creme Pós-Barba', desc: 'Alivia irritação, menta fresca', preco: 35, tag: 'Barba', img: '/images/produto-creme.jpg' },
+  { id: 'kit-lmartins', nome: 'Kit L MARTINS', desc: 'Pomada + óleo + pente de madeira', preco: 99, tag: 'Kits presente', img: '/images/produto-kit.jpg' },
 ]
 
 export function waPedirProduto(p: Product) {
@@ -69,10 +69,10 @@ export type Work = {
 }
 
 export const WORKS: Work[] = [
-  { id: 'fade-navalhado', titulo: 'Fade Navalhado', tag: 'Degradê', img: '/images/corte-fade.svg' },
-  { id: 'barba-toalha', titulo: 'Barba Toalha Quente', tag: 'Barba', img: '/images/corte-barba.svg' },
-  { id: 'social-tesoura', titulo: 'Social Tesoura', tag: 'Clássico', img: '/images/corte-social.svg' },
-  { id: 'desenho-freestyle', titulo: 'Freestyle + Pigmentação', tag: 'Desenho', img: '/images/corte-freestyle.svg' },
+  { id: 'fade-navalhado', titulo: 'Fade Navalhado', tag: 'Degradê', img: '/images/corte-fade.jpg' },
+  { id: 'barba-toalha', titulo: 'Barba Toalha Quente', tag: 'Barba', img: '/images/corte-barba.jpg' },
+  { id: 'social-tesoura', titulo: 'Social Tesoura', tag: 'Clássico', img: '/images/corte-social.jpg' },
+  { id: 'desenho-freestyle', titulo: 'Freestyle + Pigmentação', tag: 'Desenho', img: '/images/corte-freestyle.jpg' },
 ]
 
 export function waQueroEsseCorte(w: Work) {

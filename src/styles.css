@@ -62,3 +62,34 @@ body {
     radial-gradient(ellipse 60% 50% at 90% 20%, color-mix(in oklch, oklch(0.761 0.2015 149.74) 6%, transparent), transparent),
     linear-gradient(to bottom, transparent, oklch(0.1556 0.0071 78.31));
 }
+
+/* Título com degradê dourado */
+.gold-text {
+  background: linear-gradient(100deg, oklch(0.82 0.09 85) 10%, oklch(0.7309 0.1146 84.99) 45%, oklch(0.62 0.1 70) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Faixa corrida estilo barbearia */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+/* Zoom suave nas fotos dos cards */
+.zoom-img img {
+  transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1), filter 0.5s;
+}
+.zoom-img:hover img {
+  transform: scale(1.06);
+}
+
+/* Linha dourada dos títulos de seção */
+.rule-gold {
+  background: linear-gradient(90deg, oklch(0.7309 0.1146 84.99), transparent);
+  height: 2px;
+}

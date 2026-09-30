@@ -100,7 +100,7 @@ export function Footer() {
           <p className="mt-4 text-sm text-white/70">
             {ADDRESS}
             <br />
-            {resumoSemana(schedule)} • 10h às 19h
+            {resumoSemana(schedule)}
           </p>
           <div className="mt-3">
             <StatusBadge schedule={schedule} overrides={overrides} />
@@ -130,13 +130,24 @@ export function Footer() {
           <p className="mt-3 font-mono text-[11px] text-white/40">
             Sem loja online — pedido e agendamento direto no WhatsApp.
           </p>
+          <div className="mt-3 flex flex-wrap gap-2 font-mono text-[11px]">
+            <Link to="/pedido" className="underline hover:text-[var(--color-brass)]">sacola</Link>
+            <Link to="/meus-pedidos" className="underline hover:text-[var(--color-brass)]">meus pedidos</Link>
+          </div>
         </div>
       </div>
       <div className="border-t border-white/5 py-4 text-center font-mono text-[11px] text-white/40">
         © {new Date().getFullYear()} L MARTINS Barbearia — site vitrine + WhatsApp •{' '}
         <Link to="/admin/horarios" className="hover:text-[var(--color-brass)]">
           gerenciar horários
-        </Link>
+        </Link>{' '}•{' '}
+        <Link to="/admin/catalogo" className="hover:text-[var(--color-brass)]">
+          catálogo
+        </Link>{' '}•{' '}
+        <Link to="/admin/pedidos" className="hover:text-[var(--color-brass)]">
+          pedidos
+        </Link>{' '}
+        • fotos: Unsplash
       </div>
     </footer>
   )
@@ -173,5 +184,81 @@ export function GhostButton({ to, label }: { to: string; label: string }) {
     >
       {label}
     </Link>
+  )
+}
+
+/* Título de seção padronizado: kicker mono + display + linha dourada */
+export function SectionHead({
+  kicker,
+  title,
+  link,
+}: {
+  kicker: string
+  title: string
+  link?: { to: string; label: string }
+}) {
+  return (
+    <div>
+      <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-brass)]">
+        {kicker}
+      </p>
+      <div className="mt-1 flex items-end justify-between gap-4">
+        <h2 className="font-display text-3xl md:text-4xl">{title}</h2>
+        {link && (
+          <Link
+            to={link.to}
+            className="shrink-0 font-mono text-xs text-[var(--color-brass)] hover:underline"
+          >
+            {link.label} →
+          </Link>
+        )}
+      </div>
+      <div className="rule-gold mt-3 w-40" />
+    </div>
+  )
+}
+
+/* Faixa corrida dourada estilo barbearia */
+export function Marquee() {
+  const items = ['CORTE DEGRADÊ', 'BARBA NAVALHA', 'TOALHA QUENTE', 'PIGMENTAÇÃO', 'TESOURA', 'ESTILO']
+  const row = [...items, ...items]
+  return (
+    <div className="overflow-hidden border-y border-[var(--color-brass)]/30 bg-black/40 py-3">
+      <div className="marquee-track flex w-max items-center gap-8">
+        {row.map((t, i) => (
+          <span key={i} className="flex items-center gap-8 font-display text-lg tracking-wide">
+            <span className="gold-text">{t}</span>
+            <span className="text-[var(--color-brass)]">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* Faixa final de chamada para o WhatsApp */
+export function CTABand() {
+  return (
+    <section className="mx-auto mt-16 max-w-6xl px-4">
+      <div className="glass relative overflow-hidden rounded-3xl p-8 md:p-12 text-center">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-25"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 80% at 50% 120%, var(--color-brass), transparent)',
+          }}
+        />
+        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-brass)]">
+          Vaga hoje? Chama direto
+        </p>
+        <h2 className="font-display mt-2 text-3xl md:text-5xl">
+          PRONTO PARA RENOVAR <span className="gold-text">O VISUAL?</span>
+        </h2>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <WhatsAppButton href={WA_AGENDAR_GERAL} label="Agendar pelo WhatsApp" />
+          <GhostButton to="/agendar" label="Escolher dia e hora" />
+        </div>
+      </div>
+    </section>
   )
 }

@@ -13,9 +13,13 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgendarRouteImport } from './routes/agendar'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as MeusPedidosRouteImport } from './routes/meus-pedidos'
+import { Route as PedidoRouteImport } from './routes/pedido'
 import { Route as ProdutosRouteImport } from './routes/produtos'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as AdminCatalogoRouteImport } from './routes/admin/catalogo'
 import { Route as AdminHorariosRouteImport } from './routes/admin/horarios'
+import { Route as AdminPedidosRouteImport } from './routes/admin/pedidos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -37,6 +41,16 @@ const GaleriaRoute = GaleriaRouteImport.update({
   path: '/galeria',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MeusPedidosRoute = MeusPedidosRouteImport.update({
+  id: '/meus-pedidos',
+  path: '/meus-pedidos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidoRoute = PedidoRouteImport.update({
+  id: '/pedido',
+  path: '/pedido',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProdutosRoute = ProdutosRouteImport.update({
   id: '/produtos',
   path: '/produtos',
@@ -47,9 +61,19 @@ const ServicosRoute = ServicosRouteImport.update({
   path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminCatalogoRoute = AdminCatalogoRouteImport.update({
+  id: '/admin/catalogo',
+  path: '/admin/catalogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminHorariosRoute = AdminHorariosRouteImport.update({
   id: '/admin/horarios',
   path: '/admin/horarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPedidosRoute = AdminPedidosRouteImport.update({
+  id: '/admin/pedidos',
+  path: '/admin/pedidos',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -58,18 +82,26 @@ export interface FileRoutesByFullPath {
   '/agendar': typeof AgendarRoute
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
+  '/meus-pedidos': typeof MeusPedidosRoute
+  '/pedido': typeof PedidoRoute
   '/produtos': typeof ProdutosRoute
   '/servicos': typeof ServicosRoute
+  '/admin/catalogo': typeof AdminCatalogoRoute
   '/admin/horarios': typeof AdminHorariosRoute
+  '/admin/pedidos': typeof AdminPedidosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agendar': typeof AgendarRoute
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
+  '/meus-pedidos': typeof MeusPedidosRoute
+  '/pedido': typeof PedidoRoute
   '/produtos': typeof ProdutosRoute
   '/servicos': typeof ServicosRoute
+  '/admin/catalogo': typeof AdminCatalogoRoute
   '/admin/horarios': typeof AdminHorariosRoute
+  '/admin/pedidos': typeof AdminPedidosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +109,13 @@ export interface FileRoutesById {
   '/agendar': typeof AgendarRoute
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
+  '/meus-pedidos': typeof MeusPedidosRoute
+  '/pedido': typeof PedidoRoute
   '/produtos': typeof ProdutosRoute
   '/servicos': typeof ServicosRoute
+  '/admin/catalogo': typeof AdminCatalogoRoute
   '/admin/horarios': typeof AdminHorariosRoute
+  '/admin/pedidos': typeof AdminPedidosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +124,39 @@ export interface FileRouteTypes {
     | '/agendar'
     | '/contato'
     | '/galeria'
+    | '/meus-pedidos'
+    | '/pedido'
     | '/produtos'
     | '/servicos'
+    | '/admin/catalogo'
     | '/admin/horarios'
+    | '/admin/pedidos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/agendar'
     | '/contato'
     | '/galeria'
+    | '/meus-pedidos'
+    | '/pedido'
     | '/produtos'
     | '/servicos'
+    | '/admin/catalogo'
     | '/admin/horarios'
+    | '/admin/pedidos'
   id:
     | '__root__'
     | '/'
     | '/agendar'
     | '/contato'
     | '/galeria'
+    | '/meus-pedidos'
+    | '/pedido'
     | '/produtos'
     | '/servicos'
+    | '/admin/catalogo'
     | '/admin/horarios'
+    | '/admin/pedidos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,9 +164,13 @@ export interface RootRouteChildren {
   AgendarRoute: typeof AgendarRoute
   ContatoRoute: typeof ContatoRoute
   GaleriaRoute: typeof GaleriaRoute
+  MeusPedidosRoute: typeof MeusPedidosRoute
+  PedidoRoute: typeof PedidoRoute
   ProdutosRoute: typeof ProdutosRoute
   ServicosRoute: typeof ServicosRoute
+  AdminCatalogoRoute: typeof AdminCatalogoRoute
   AdminHorariosRoute: typeof AdminHorariosRoute
+  AdminPedidosRoute: typeof AdminPedidosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +203,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GaleriaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/meus-pedidos': {
+      id: '/meus-pedidos'
+      path: '/meus-pedidos'
+      fullPath: '/meus-pedidos'
+      preLoaderRoute: typeof MeusPedidosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedido': {
+      id: '/pedido'
+      path: '/pedido'
+      fullPath: '/pedido'
+      preLoaderRoute: typeof PedidoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/produtos': {
       id: '/produtos'
       path: '/produtos'
@@ -165,11 +231,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/catalogo': {
+      id: '/admin/catalogo'
+      path: '/admin/catalogo'
+      fullPath: '/admin/catalogo'
+      preLoaderRoute: typeof AdminCatalogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/horarios': {
       id: '/admin/horarios'
       path: '/admin/horarios'
       fullPath: '/admin/horarios'
       preLoaderRoute: typeof AdminHorariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pedidos': {
+      id: '/admin/pedidos'
+      path: '/admin/pedidos'
+      fullPath: '/admin/pedidos'
+      preLoaderRoute: typeof AdminPedidosRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -180,9 +260,13 @@ const rootRouteChildren: RootRouteChildren = {
   AgendarRoute: AgendarRoute,
   ContatoRoute: ContatoRoute,
   GaleriaRoute: GaleriaRoute,
+  MeusPedidosRoute: MeusPedidosRoute,
+  PedidoRoute: PedidoRoute,
   ProdutosRoute: ProdutosRoute,
   ServicosRoute: ServicosRoute,
+  AdminCatalogoRoute: AdminCatalogoRoute,
   AdminHorariosRoute: AdminHorariosRoute,
+  AdminPedidosRoute: AdminPedidosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
