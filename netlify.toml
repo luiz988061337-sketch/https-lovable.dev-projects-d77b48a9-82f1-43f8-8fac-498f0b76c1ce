@@ -1,4 +1,5 @@
 # Build + deploy na Netlify (o plugin @netlify/vite-plugin-tanstack-start
-# em vite.config.ts cuida do publish dir e das functions).
+# em vite.config.ts cuida das functions; o publish aponta os assets do cliente).
 [build]
   command = "npm run build"
+  publish = "dist/client"
